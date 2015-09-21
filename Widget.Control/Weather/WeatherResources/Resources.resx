@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HubChanceOfRain" xml:space="preserve">
+    <value>chance of rain</value>
+  </data>
+  <data name="HubFeelsLike" xml:space="preserve">
+    <value>Feels like:</value>
+  </data>
+  <data name="HubLowTemp" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="OptionsAbout" xml:space="preserve">
+    <value>About Mosaic</value>
+  </data>
+  <data name="OptionsAbout1" xml:space="preserve">
+    <value>About Weather widget</value>
+  </data>
+  <data name="OptionsAboutIcons" xml:space="preserve">
+    <value>Some icons provided by Austin Andrews, Ludacris and janek2012.</value>
+  </data>
+  <data name="OptionsAboutTabHeader" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="OptionsAboutTabHeader1" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="OptionsApplyButton" xml:space="preserve">
+    <value>apply</value>
+  </data>
+  <data name="OptionsApplyButton1" xml:space="preserve">
+    <value>apply</value>
+  </data>
+  <data name="OptionsAutostart" xml:space="preserve">
+    <value>Autostart</value>
+  </data>
+  <data name="OptionsAutostartCheckBox" xml:space="preserve">
+    <value>Start Mosaic automatically with Windows</value>
+  </data>
+  <data name="OptionsBehaviour" xml:space="preserve">
+    <value>Behaviour</value>
+  </data>
+  <data name="OptionsBg" xml:space="preserve">
+    <value>Background color</value>
+  </data>
+  <data name="OptionsBgImage" xml:space="preserve">
+    <value>Background image</value>
+  </data>
+  <data name="OptionsBgOpacity" xml:space="preserve">
+    <value>Background image opacity:</value>
+  </data>
+  <data name="OptionsCancelButton" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="OptionsCancelButton1" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="OptionsCelsius" xml:space="preserve">
+    <value>Celsius</value>
+  </data>
+  <data name="OptionsChange" xml:space="preserve">
+    <value>change</value>
+  </data>
+  <data name="OptionsCopyright" xml:space="preserve">
+    <value>This software is protected by copyright law and distributed under Microsoft Public License.</value>
+  </data>
+  <data name="OptionsData" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="OptionsEnableAnimation" xml:space="preserve">
+    <value>Enable widget animation</value>
+  </data>
+  <data name="OptionsEnableThumbBar" xml:space="preserve">
+    <value>Enable windows thumbnails bar</value>
+  </data>
+  <data name="OptionsExclusiveMode" xml:space="preserve">
+    <value>Enable fullscreen mode</value>
+  </data>
+  <data name="OptionsFahrenheit" xml:space="preserve">
+    <value>Fahrenheit</value>
+  </data>
+  <data name="OptionsGeneralTabHeader" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="OptionsGeneralTabHeader1" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="OptionsIntervalHours" xml:space="preserve">
+    <value>h.</value>
+  </data>
+  <data name="OptionsIntervalMinutes" xml:space="preserve">
+    <value>min.</value>
+  </data>
+  <data name="OptionsItem" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="OptionsLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="OptionsLocation" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="OptionsMenuButton" xml:space="preserve">
+    <value>Show menu button</value>
+  </data>
+  <data name="OptionsOkButton" xml:space="preserve">
+    <value>ok</value>
+  </data>
+  <data name="OptionsOkButton1" xml:space="preserve">
+    <value>ok</value>
+  </data>
+  <data name="OptionsRestart" xml:space="preserve">
+    <value>Changes will be applied after restarting Mosaic.</value>
+  </data>
+  <data name="OptionsScrollBg" xml:space="preserve">
+    <value>Scroll background image when scrolling Mosaic</value>
+  </data>
+  <data name="OptionsSearchBox" xml:space="preserve">
+    <value>Type the name of your location and press search</value>
+  </data>
+  <data name="OptionsSearchButton" xml:space="preserve">
+    <value>search</value>
+  </data>
+  <data name="OptionsShowFeelsLike" xml:space="preserve">
+    <value>Show "feels like" temperature instead of actual</value>
+  </data>
+  <data name="OptionsShowTaskbar" xml:space="preserve">
+    <value>Show Windows taskbar in fullscreen mode</value>
+  </data>
+  <data name="OptionsShowTempIn" xml:space="preserve">
+    <value>Show temperature in:</value>
+  </data>
+  <data name="OptionsShowVideo" xml:space="preserve">
+    <value>Show weather video in the hub</value>
+  </data>
+  <data name="OptionsStartupAnim" xml:space="preserve">
+    <value>Show startup animation</value>
+  </data>
+  <data name="OptionsTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="OptionsTitle1" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="OptionsUI" xml:space="preserve">
+    <value>User interface</value>
+  </data>
+  <data name="OptionsUI1" xml:space="preserve">
+    <value>UI</value>
+  </data>
+  <data name="OptionsUITabHeader" xml:space="preserve">
+    <value>UI</value>
+  </data>
+  <data name="OptionsVersion" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="OptionsVersion1" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="OptionsWeatherInterval" xml:space="preserve">
+    <value>Weather refresh interval:</value>
+  </data>
+  <data name="OptionsWindowTitle" xml:space="preserve">
+    <value>Mosaic options</value>
+  </data>
+  <data name="OptionsWindowTitle1" xml:space="preserve">
+    <value>Weather options</value>
+  </data>
+  <data name="PeopleHubAll" xml:space="preserve">
+    <value>all</value>
+  </data>
+  <data name="PeopleHubFavorites" xml:space="preserve">
+    <value>favorites</value>
+  </data>
+  <data name="PeopleHubTip" xml:space="preserve">
+    <value>select friends that you want to pin on a start screen</value>
+  </data>
+  <data name="PeopleHubTitle" xml:space="preserve">
+    <value>friends</value>
+  </data>
+  <data name="RefreshItem" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="RefreshItem1" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="RemoveItem" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="Tip" xml:space="preserve">
+    <value>Setup your location in options. Click to open options.</value>
+  </data>
+  <data name="ToolbarBackItem" xml:space="preserve">
+    <value>back</value>
+  </data>
+  <data name="ToolbarExitItem" xml:space="preserve">
+    <value>exit</value>
+  </data>
+  <data name="ToolbarOptionsItem" xml:space="preserve">
+    <value>options</value>
+  </data>
+  <data name="ToolbarPeopleItem" xml:space="preserve">
+    <value>friends</value>
+  </data>
+  <data name="ToolbarPinAppItem" xml:space="preserve">
+    <value>application</value>
+  </data>
+  <data name="ToolbarPinItem" xml:space="preserve">
+    <value>pin</value>
+  </data>
+  <data name="ToolbarPinWebItem" xml:space="preserve">
+    <value>website</value>
+  </data>
+  <data name="ToolbarWidgetsItem" xml:space="preserve">
+    <value>add</value>
+  </data>
+  <data name="WhatsNew" xml:space="preserve">
+    <value>what's new?</value>
+  </data>
+  <data name="WidgetInvisible" xml:space="preserve">
+    <value>The content of this widget is visible only in fullscreen mode.</value>
+  </data>
+</root>

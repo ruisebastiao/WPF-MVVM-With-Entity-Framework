@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EarMoldDesign_CanalOrTip" xml:space="preserve">
+    <value>Canal/Tip</value>
+  </data>
+  <data name="EarMoldDesign_FullShell" xml:space="preserve">
+    <value>Full Shell</value>
+  </data>
+  <data name="EarMoldDesign_HalfShell" xml:space="preserve">
+    <value>Half Shell</value>
+  </data>
+  <data name="EarMoldDesign_HalfSkeleton" xml:space="preserve">
+    <value>Half Skeleton</value>
+  </data>
+  <data name="EarMoldDesign_LifeTubeMold" xml:space="preserve">
+    <value>Life Tube Mold</value>
+  </data>
+  <data name="EarMoldDesign_OpenEarOrCROS" xml:space="preserve">
+    <value>OpenEar/CROS</value>
+  </data>
+  <data name="EarMoldDesign_QuarterSkeleton" xml:space="preserve">
+    <value>Quarter Skeleton</value>
+  </data>
+  <data name="EarMoldDesign_ReceiverMold" xml:space="preserve">
+    <value>Receiver Mold</value>
+  </data>
+  <data name="EarMoldDesign_RICMold" xml:space="preserve">
+    <value>RIC Mold</value>
+  </data>
+  <data name="EarMoldDesign_Skeleton" xml:space="preserve">
+    <value>Skeleton</value>
+  </data>
+  <data name="EarMoldDesign_SwinPlug" xml:space="preserve">
+    <value>Swin Plug</value>
+  </data>
+  <data name="MoldRepair_ElbowReplacement" xml:space="preserve">
+    <value>Elbow Replacement</value>
+  </data>
+  <data name="MoldRepair_Lacquering" xml:space="preserve">
+    <value>Lacquering</value>
+  </data>
+  <data name="MoldRepair_Retubing" xml:space="preserve">
+    <value>Retubing</value>
+  </data>
+  <data name="MoldRepair_Trimming" xml:space="preserve">
+    <value>Trimming</value>
+  </data>
+  <data name="RepairStatus_CompanyDispatched" xml:space="preserve">
+    <value>Company Dispatched</value>
+  </data>
+  <data name="RepairStatus_CompanyReceived" xml:space="preserve">
+    <value>Company Received</value>
+  </data>
+  <data name="RepairStatus_DeliveredToCustomer" xml:space="preserve">
+    <value>Delivered To Customer</value>
+  </data>
+  <data name="RepairStatus_DispatchedToCompany" xml:space="preserve">
+    <value>Dispatched To Company</value>
+  </data>
+  <data name="RepairStatus_NotProcessed" xml:space="preserve">
+    <value>Not Processed</value>
+  </data>
+  <data name="RepairStatus_Received" xml:space="preserve">
+    <value>Received</value>
+  </data>
+  <data name="WarrantyType_NonWarranty" xml:space="preserve">
+    <value>Non Warranty</value>
+  </data>
+  <data name="WarrantyType_Warranty" xml:space="preserve">
+    <value>Warranty</value>
+  </data>
+  <data name="HearingAidCondition_BatteryDoor" xml:space="preserve">
+    <value>Battery Door</value>
+  </data>
+  <data name="HearingAidCondition_BodyCase" xml:space="preserve">
+    <value>Body Case</value>
+  </data>
+  <data name="HearingAidCondition_Dead" xml:space="preserve">
+    <value>Dead</value>
+  </data>
+  <data name="HearingAidCondition_Distortion" xml:space="preserve">
+    <value>Distortion</value>
+  </data>
+  <data name="HearingAidCondition_FacePlateGumming" xml:space="preserve">
+    <value>Face Plate Gumming</value>
+  </data>
+  <data name="HearingAidCondition_Feedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="HearingAidCondition_HABroken" xml:space="preserve">
+    <value>H.A. Broken</value>
+  </data>
+  <data name="HearingAidCondition_Hook" xml:space="preserve">
+    <value>Hook</value>
+  </data>
+  <data name="HearingAidCondition_Intermittent" xml:space="preserve">
+    <value>Intermittent</value>
+  </data>
+  <data name="HearingAidCondition_Noise" xml:space="preserve">
+    <value>Noise</value>
+  </data>
+  <data name="HearingAidCondition_Others" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="HearingAidCondition_ProgramButton" xml:space="preserve">
+    <value>Program Button</value>
+  </data>
+  <data name="HearingAidCondition_PullingThread" xml:space="preserve">
+    <value>PullingThread</value>
+  </data>
+  <data name="HearingAidCondition_ReShelling" xml:space="preserve">
+    <value>ReShelling</value>
+  </data>
+  <data name="HearingAidCondition_Servicing" xml:space="preserve">
+    <value>Servicing</value>
+  </data>
+  <data name="HearingAidCondition_Switch" xml:space="preserve">
+    <value>Switch</value>
+  </data>
+  <data name="HearingAidCondition_Trimmer" xml:space="preserve">
+    <value>Trimmer</value>
+  </data>
+  <data name="HearingAidCondition_VolumnControl" xml:space="preserve">
+    <value>Volumn Control</value>
+  </data>
+  <data name="HearingAidCondition_WaxGaurdSitting" xml:space="preserve">
+    <value>Wax Gaurd Sitting</value>
+  </data>
+  <data name="HearingAidCondition_Weak" xml:space="preserve">
+    <value>Weak</value>
+  </data>
+  <data name="BatterySize_SixSeventyFive" xml:space="preserve">
+    <value>675</value>
+  </data>
+  <data name="BatterySize_Ten" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="BatterySize_Thirteen" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="BatterySize_ThreeTwelve" xml:space="preserve">
+    <value>312</value>
+  </data>
+  <data name="EarMoldHearingAidType_BTE" xml:space="preserve">
+    <value>Behind the Ear</value>
+  </data>
+  <data name="EarMoldHearingAidType_PKT" xml:space="preserve">
+    <value>Pocket</value>
+  </data>
+  <data name="SoftMoldTubingType_LibbyHorn" xml:space="preserve">
+    <value>Libby Horn</value>
+  </data>
+  <data name="SoftMoldTubingType_Regular" xml:space="preserve">
+    <value>Regular</value>
+  </data>
+  <data name="OrderStatus_Delivered" xml:space="preserve">
+    <value>Delivered</value>
+  </data>
+  <data name="OrderStatus_InProcess" xml:space="preserve">
+    <value>In Process</value>
+  </data>
+  <data name="OrderStatus_OrderTaken" xml:space="preserve">
+    <value>Order Taken</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VentSize_One" xml:space="preserve">
+    <value>1.0</value>
+  </data>
+  <data name="VentSize_OnePoint5" xml:space="preserve">
+    <value>1.5</value>
+  </data>
+  <data name="VentSize_Point5" xml:space="preserve">
+    <value>.5</value>
+  </data>
+  <data name="VentSize_Three" xml:space="preserve">
+    <value>3.0</value>
+  </data>
+  <data name="VentSize_Two" xml:space="preserve">
+    <value>2.0</value>
+  </data>
+  <data name="VentSize_TwoPoint5" xml:space="preserve">
+    <value>2.5</value>
+  </data>
+</root>

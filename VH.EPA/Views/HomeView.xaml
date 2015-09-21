@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="VH.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:model="clr-namespace:VH.Model;assembly=VH.Model"
+             xmlns:resources="clr-namespace:VH.Resources;assembly=VH.Resources"
+             mc:Ignorable="d" Loaded="WindowLoaded">
+    <Grid x:Name="WidgetHost" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+            Grid.Row="0" Height="300" HorizontalAlignment="Right" Width="352" Margin="0,0,3,0">
+            <Grid.RenderTransform>
+                <TranslateTransform x:Name="ForegroundGridTranslation"/>
+            </Grid.RenderTransform>
+            <Border Grid.Row="0"
+                    BorderBrush="{DynamicResource AccentColorBrush}"
+                                BorderThickness="1.5">
+                <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <DataTemplate DataType="{x:Type model:Reminder}">
+                    <StackPanel ToolTip="{Binding FormattedReminder}" >
+                                <Border Grid.Row="0">
+                                    <TextBlock
+                                    Text="{Binding ReminderMessage}" 
+                                    TextWrapping="WrapWithOverflow"
+                                    />
+                                </Border>
+                            </StackPanel>
+                </DataTemplate>
+            </Grid.Resources>
+                <Border Grid.Row="0"
+                        Background="{DynamicResource AccentColorBrush}"
+                        BorderThickness=".5">
+                        
+                        <TextBlock
+                            Grid.Row="0"
+                            Text="{x:Static resources:LabelResources.Reminders}"
+                Foreground="{DynamicResource WhiteBrush}"
+                             FontFamily="{StaticResource HeaderFontFamily}" FontSize="{StaticResource HeaderFontSize}" FontWeight="SemiBold"/>
+                </Border>
+
+                <ListBox
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                            Grid.Row="2"
+                            ItemsSource="{Binding ReminderList.ObservableList}"/>
+        </Grid>
+             </Border>
+            </Grid>
+    </Grid>
+</UserControl>

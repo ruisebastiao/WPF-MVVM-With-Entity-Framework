@@ -1,0 +1,146 @@
+﻿<UserControl x:Class="VH.View.AddUserLoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:resources="clr-namespace:VH.Resources;assembly=VH.Resources"
+             xmlns:userControls="clr-namespace:VH.UI.UserControls;assembly=VH.UI.UserControls"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d">
+    <Grid>
+        <AdornerDecorator>
+            <Grid>
+                <Grid.Resources>
+                    <userControls:BoolToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                    <userControls:BoolToVisibilityConverter x:Key="NegateBooleanToVisibilityConverter" NegateInputValue="True"/>
+                </Grid.Resources>
+                <ScrollViewer>
+                    <Grid Margin="0,10,0,0">
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="5" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="5" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="5" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Label Content="{x:Static  resources:LabelResources.LoginName}" 
+                                   Visibility="{Binding Entity.IsInEditMode, Converter={StaticResource NegateBooleanToVisibilityConverter}}"/>
+                            <TextBox
+                                    x:Name="txtLoginName"
+                                Grid.Column="1"
+                                    Margin="8,0,0,0"
+                                    Text="{Binding Entity.LoginName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                    Width="200" 
+                                   Visibility="{Binding Entity.IsInEditMode, Converter={StaticResource NegateBooleanToVisibilityConverter}}"/>
+
+                            <Label
+                                Grid.Row="2"
+                                Content="{x:Static  resources:LabelResources.LoginPassword}" 
+                                Visibility="{Binding Entity.IsInEditMode, Converter={StaticResource NegateBooleanToVisibilityConverter}}"/>
+                            <PasswordBox
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="8,0,0,0"
+                                userControls:PasswordBoxHelper.BoundPassword="{Binding Entity.LoginPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                Width="200" 
+                                Visibility="{Binding Entity.IsInEditMode, Converter={StaticResource NegateBooleanToVisibilityConverter}}">
+                            </PasswordBox>
+
+                            <Label
+                                Grid.Row="4"
+                                Content="{x:Static  resources:LabelResources.ConfirmPassword}" 
+                                Visibility="{Binding Entity.IsInEditMode, Converter={StaticResource NegateBooleanToVisibilityConverter}}"/>
+                            <PasswordBox
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Margin="8,0,0,0"
+                                userControls:PasswordBoxHelper.BoundPassword="{Binding Entity.ConfirmPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                Width="200" 
+                                Visibility="{Binding Entity.IsInEditMode, Converter={StaticResource NegateBooleanToVisibilityConverter}}"/>
+
+                            <Label Content="{x:Static  resources:LabelResources.IsAdmin}" 
+                                    Grid.Row="6"
+                                   />
+                            <CheckBox
+                                Grid.Row="6"
+                                Grid.Column="1"
+                                Margin="8,0,0,0"
+                                Width="200" 
+                                IsChecked="{Binding Entity.IsAdmin}"/>
+
+
+                            <Label Content="{x:Static  resources:LabelResources.OldPassword}" 
+                                   Visibility="{Binding Entity.IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                            <PasswordBox
+                                x:Name="txtOldPwd"
+                                Grid.Column="1"
+                                Margin="8,0,0,0"
+                                userControls:PasswordBoxHelper.BoundPassword="{Binding Entity.OldPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                Visibility="{Binding Entity.IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                Width="200" />
+
+                            <Label
+                                Grid.Row="2"
+                                Content="{x:Static  resources:LabelResources.NewPassword}" 
+                                Visibility="{Binding Entity.IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                            <PasswordBox
+                                x:Name="txtNewPwd"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="8,0,0,0"
+                                userControls:PasswordBoxHelper.BoundPassword="{Binding Entity.NewPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                Width="200" 
+                                Visibility="{Binding Entity.IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            </PasswordBox>
+
+                            <Label
+                                Grid.Row="4"
+                                Content="{x:Static  resources:LabelResources.ConfirmPassword}" 
+                                Visibility="{Binding Entity.IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                            <PasswordBox
+                                x:Name="txtConfirmPwd"
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Margin="8,0,0,0"
+                                userControls:PasswordBoxHelper.BoundPassword="{Binding Entity.ConfirmPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                Width="200" 
+                                Visibility="{Binding Entity.IsInEditMode, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                        </Grid>
+
+                        <Grid
+                            HorizontalAlignment="Center"
+                            Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Button
+                                Content="{x:Static  resources:ButtonResources.Save}"
+                                Command="{Binding SaveCommand}" />
+                            <Button
+                                Content="{x:Static  resources:ButtonResources.Cancel}"
+                                Grid.Column="2"
+                                Command="{Binding CancelCommand}" />
+                        </Grid>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </AdornerDecorator>
+
+    </Grid>
+</UserControl>

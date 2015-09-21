@@ -1,0 +1,107 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModel="clr-namespace:VH.ViewModel;assembly=VH.ViewModel"
+   xmlns:view="clr-namespace:VH.View">
+  <!--<DataTemplate DataType="{x:Type viewModel:MainWindowViewModel}">
+    <view:MainWindow/>
+  </DataTemplate>-->
+
+  <DataTemplate DataType="{x:Type viewModel:UserLoginViewModel}">
+    <view:UserLoginView/>
+  </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:AddCustomerViewModel}">
+        <view:AddCustomerView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:CustomerViewModel}">
+        <view:CustomerView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:AppointmentViewModel}">
+        <view:AppointmentView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:CallRegistryViewModel}">
+        <view:CallRegistryView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:AddCallLogViewModel}">
+        <view:AddCallLogView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+        <view:HomeView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:CustomerDetailViewModel}">
+        <view:CustomerDetailView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:CustomerRepairViewModel}">
+        <view:CustomerRepairView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:AddCustomerRepairViewModel}">
+        <view:AddCustomerRepairView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:UpdateCustomerRepairStatusViewModel}">
+        <view:UpdateCustomerRepairStatusView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:CustomerAppointmentViewModel}">
+        <view:CustomerAppointmentView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:CustomerOrderViewModel}">
+        <view:CustomerOrderView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:AddCustomerHearingAidOrderViewModel}">
+        <view:AddCustomerHearingAidOrderView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:AddCustomerEarMoldOrderViewModel}">
+        <view:AddCustomerEarMoldOrderView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:CustomerSummaryViewModel}">
+        <view:CustomerSummaryView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
+        <view:SettingsView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:ChangePasswordViewModel}">
+        <view:ChangePasswordView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:AddUserLoginViewModel}">
+        <view:AddUserLoginView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:AddReminderViewModel}">
+        <view:AddReminderView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:ReminderViewModel}">
+        <view:ReminderView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:MiscellaneousViewModel}">
+        <view:MiscellaneousView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:CustomerWarrantyInformedViewModel}">
+        <view:CustomerWarrantyInformedView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:AddCustomerWarrantyInformedViewModel}">
+        <view:AddCustomerWarrantyInformedView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModel:PrintViewModel}">
+        <view:PrintView/>
+    </DataTemplate>
+</ResourceDictionary>

@@ -1,0 +1,251 @@
+﻿<Window x:Class="VH.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:view="clr-namespace:VH.View"
+        xmlns:resources="clr-namespace:VH.Resources;assembly=VH.Resources"
+        xmlns:converters="clr-namespace:VH.View.Converters"
+        xmlns:controls="clr-namespace:VH.UI.UserControls;assembly=VH.UI.UserControls"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        Title="VH EPA"
+        WindowState="{Binding WindowState}"
+        ResizeMode="NoResize" ShowActivated="True" WindowStartupLocation="CenterScreen"
+        FocusVisualStyle="{x:Null}"
+        WindowStyle="None">
+    <Window.InputBindings>
+        <KeyBinding Key="BrowserBack"
+                    Command="{Binding NavBackCommand}" />
+        </Window.InputBindings>
+    <i:Interaction.Behaviors>
+        <controls:MessageBoxDialogBehavior />
+        <controls:VMModalDialogBehavior />
+    </i:Interaction.Behaviors>
+    <AdornerDecorator>
+        <Grid x:Name="LayoutRoot" Background="{StaticResource WindowBackgroundBrush}">
+            <Grid.Resources>
+                <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="4" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="ShellHeader" Background="{StaticResource HighlightBrush}">
+                <Grid.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                <Setter Property="Panel.ZIndex" Value="1" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="WindowHeader" Height="Auto" Grid.Row="0" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="50*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0"
+                                Margin="5,0,0,0"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Stretch">
+
+                        <TextBlock x:Name="WindowTitle"
+                                   FontFamily="{StaticResource MixedHeaderFontFamily}"
+                                   FontSize="{StaticResource HeaderFontSize}"
+                                   Foreground="{StaticResource ApplicationNameBrush}" FontWeight="Bold"
+                                   IsHitTestVisible="False"
+                                   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,2,0,0"
+                                   Text="{x:Static  resources:TitleResources.VHERP}">
+                        </TextBlock>
+
+                        <TextBlock Margin="5,0,5,0"
+                                   FontFamily="{StaticResource ApplicationNameFontFamily}"
+                                   FontSize="{StaticResource ApplicationNameFontSize}"
+                                   Foreground="{StaticResource ApplicationNameBrush}" FontWeight="Bold"
+                                   IsHitTestVisible="False"
+                                   HorizontalAlignment="Left" VerticalAlignment="Center"
+                                   Opacity="0.5"
+                                   Text="|">
+                        </TextBlock>
+
+                        <TextBlock x:Name="UserName"
+                                   FontSize="10" FontWeight="Bold" Foreground="{StaticResource WhiteColorBrush}"
+                                   Text="{Binding UserLogin.LoginName}"
+                                   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,2,0,0"
+                                   ToolTip="Active user" />
+
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0">
+
+                        <Button Style="{StaticResource MetroButtonStyle}"
+                                VerticalAlignment="Center"
+                                ToolTip="Help" Visibility="Collapsed">
+                            <TextBlock FontFamily="Segoe WP" FontSize="10"
+                                       Foreground="{StaticResource WhiteColorBrush}" FontWeight="Bold"
+                                       Text="HELP" />
+                        </Button>
+
+                        <Button x:Name="MinimizeButton"
+                                Command="{Binding MinimizeCommand}"
+                                VerticalAlignment="Center"
+                                Margin="100,1.5,1.5,1.5"
+                                Style="{StaticResource MetroButtonStyle}"
+                                ToolTip="Minimize">
+                            <TextBlock TextWrapping="Wrap" Text="0" FontFamily="Webdings" FontSize="13.333"
+                                       Foreground="{StaticResource WhiteColorBrush}" />
+                        </Button>
+
+                        <Button x:Name="CloseButton"
+                                Command="{Binding ShutdownCommand}"
+                                VerticalAlignment="Center"
+                                Margin="1.5"
+                                Style="{StaticResource MetroButtonStyle}"
+                                ToolTip="Close">
+                            <TextBlock TextWrapping="Wrap" Text="r" FontFamily="Webdings" FontSize="13.333"
+                                       Foreground="{StaticResource WhiteColorBrush}" />
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+            <!--Sub Header-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition Width="280" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Border x:Name="LinksBorder">
+                    <StackPanel x:Name="LinksStackPanel"
+                                Style="{StaticResource LinksStackPanelStyle}">
+                        <StackPanel Orientation="Horizontal">
+                            <controls:ModernButton
+                                IconWidth="11"
+                                IconHeight="11"
+                                ControlHeight="16"
+                                ControlWidth="16"
+                                Margin="0.5,0,0,5"
+                                IconData="F1 M 33,22L 33,26L 19.75,26L 27,33L 20.5,33L 11,24L 20.5,15L 27,15L 19.75,22L 33,22 Z"
+                                HorizontalAlignment="Left" VerticalAlignment="Top"
+                                ToolTip="{x:Static resources:TooltipResources.NaviagteBack}"
+                                Command="{Binding ElementName=ContentFrame, Path=NavBackCommand}" />
+                            </StackPanel>
+
+                        <ToggleButton x:Name="ButtonHome"
+                                      Style="{StaticResource LinkStyle}"
+                                      Content="{x:Static  resources:ButtonResources.Home}"
+                                      view:VHAttachedProperties.HandleElementChecked="True"
+                                      IsChecked="{Binding IsHomeTabSelected}"
+                                      Command="{Binding HomeCommand}" />
+                        <Border BorderThickness="1,0"
+                                BorderBrush="{StaticResource SeperatorBrush}" Margin="-1,0,0,0" Opacity="1" />
+                        <ToggleButton x:Name="ButtonCustomer"
+                                      Style="{StaticResource LinkStyle}"
+                                      Content="{x:Static  resources:ButtonResources.Customer}"
+                                      view:VHAttachedProperties.HandleElementChecked="True"
+                                      IsChecked="{Binding IsCustomerTabSelected}"
+                                      Command="{Binding CustomerCommand}" />
+                        <Border x:Name="MouseOverLeftRightSeperator" BorderThickness="1,0"
+                                BorderBrush="{StaticResource SeperatorBrush}" Margin="-1,0,0,0" Opacity="1" />
+                        <ToggleButton x:Name="ButtonAppointment"
+                                      Style="{StaticResource LinkStyle}"
+                                      Content="{x:Static  resources:ButtonResources.Appointment}"
+                                      view:VHAttachedProperties.HandleElementChecked="True"
+                                      IsChecked="{Binding IsAppointmentTabSelected}"
+                                      Command="{Binding AppointmentCommand}" />
+                        <Border BorderThickness="1,0"
+                                BorderBrush="{StaticResource SeperatorBrush}" Margin="-1,0,0,0" Opacity="1" />
+                        <ToggleButton x:Name="ButtonCallLog"
+                                      Style="{StaticResource LinkStyle}"
+                                      Visibility="Collapsed"
+                                      Content="{x:Static  resources:ButtonResources.CallRegistry}"
+                                      IsChecked="{Binding IsCallRegistryTabSelected}"
+                                      view:VHAttachedProperties.HandleElementChecked="True"
+                                      Command="{Binding CallRegistryCommand}" />
+                        <ToggleButton x:Name="ButtonMiscellaneous"
+                                      Style="{StaticResource LinkStyle}"
+                                      Content="{x:Static  resources:ButtonResources.Miscellaneous}"
+                                      IsChecked="{Binding IsMiscellaneousTabSelected}"
+                                      view:VHAttachedProperties.HandleElementChecked="True"
+                                      Command="{Binding MiscellaneousCommand}" />
+                        <Border BorderThickness="1,0"
+                                BorderBrush="{StaticResource SeperatorBrush}" Margin="-1,0,0,0" Opacity="1" 
+                                Visibility="{Binding  Path=UserLogin.IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                        <ToggleButton x:Name="ButtonSetting"
+                                      Style="{StaticResource LinkStyle}"
+                                      Content="{x:Static  resources:ButtonResources.Settings}"
+                                      IsChecked="{Binding IsSettingTabSelected}"
+                                      view:VHAttachedProperties.HandleElementChecked="True"
+                                      Command="{Binding SettingCommand}" 
+                                      Visibility="{Binding  Path=UserLogin.IsAdmin, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    </StackPanel>
+                </Border>
+                <Grid Grid.Column="2">
+                    <Grid.Resources>
+                        <DataTemplate x:Key="ListItemTemplate">
+                            <Grid>
+                                <TextBlock Text="{Binding Value}" />
+                            </Grid>
+                        </DataTemplate>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <controls:AutoCompleteTextBox
+                        Width="250"
+                        Margin="0,10,2,0"
+                        HorizontalAlignment="Right"
+                        TextBoxStyle="{StaticResource SearchTextBoxStyle}"
+                        SearchText="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=''}"
+                        SearchResultCollection="{Binding CustomerSearchList, Mode=OneWay, FallbackValue=null}"
+                        ListBoxItemTemplate="{StaticResource ListItemTemplate}"
+                        SelectedValuePath="Key"
+                        SelectedValue="{Binding SelectedCustomerID, Mode=TwoWay, FallbackValue=0}"
+                        WaterMarkerText="{x:Static  resources:LabelResources.SearchCustomer}"
+                        WaterMarkerStyle="{StaticResource WatermarkTextBlockStyle}"
+                        SelectedItemCommand="{Binding SelectSearchItemCommand}"
+                        IsPopupOpen="{Binding IsPopupOpen, Mode=TwoWay, FallbackValue=false}"
+                        PopupMaxHeight="120" />
+                </Grid>
+            </Grid>
+
+            <Border x:Name="ContentBorder"
+                    Grid.Row="3">
+                <controls:MetroContentControl
+                    x:Name="ContentFrame"
+                    Margin="0,8,0,0"
+                    Visibility="{Binding ContentViewModel, Converter={converters:NullObjectToVisibiltyConverter}}" />
+            </Border>
+
+            <Rectangle
+                x:Name="ModelOverlay"
+                Grid.RowSpan="4"
+                Opacity="0.1"
+                Fill="{StaticResource AccentColorLightBlueBrush}"
+                Visibility="{Binding ChildViewModel, Converter={converters:NullObjectToVisibiltyConverter}}" />
+            <controls:ModalDailogWindow
+                Grid.RowSpan="4"
+                view:VHAttachedProperties.ModelDialogContent="{Binding ChildViewModel}"
+                ViewMode="{Binding ChildViewModel.ViewMode}"
+                IsActive="{Binding ChildViewModel.IsActive}"
+                Visibility="{Binding ChildViewModel, Converter={converters:NullObjectToVisibiltyConverter}}">
+            </controls:ModalDailogWindow>
+        </Grid>
+    </AdornerDecorator>
+</Window>

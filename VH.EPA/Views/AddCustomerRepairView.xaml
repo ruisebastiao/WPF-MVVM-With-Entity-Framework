@@ -1,0 +1,554 @@
+﻿<UserControl x:Class="VH.View.AddCustomerRepairView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:resources="clr-namespace:VH.Resources;assembly=VH.Resources"
+             xmlns:userControls="clr-namespace:VH.UI.UserControls;assembly=VH.UI.UserControls"
+             xmlns:controls="clr-namespace:VH.UI.UserControls.Controls;assembly=VH.UI.UserControls"
+             xmlns:view="clr-namespace:VH.View" xmlns:utilities="clr-namespace:VH.Model.Utilities;assembly=VH.Model"
+             mc:Ignorable="d"
+             x:Name="page">
+    <UserControl.InputBindings>
+        <KeyBinding Key="Escape" Command="{Binding CancelCommand}" />
+        <KeyBinding Key="Enter" Command="{Binding SaveCommand}" />
+    </UserControl.InputBindings>
+    <Grid>
+        <AdornerDecorator>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="8" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" BorderThickness="0">
+                    <Grid>
+                        <!--<Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="4" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>-->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="15" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Visibility="Collapsed">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="3" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="3" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <userControls:ModernButton
+                            ControlHeight="23"
+                            ControlWidth="23"
+                            IconWidth="13"
+                            IconHeight="13"
+                            IconData="M8.1099597,36.94997L8.1099597,41.793968 39.213959,41.793968 39.213959,36.94997z M12.42,0.049999889L18.4,0.049999889 18.4,12.252 12.42,12.252z M0,0L7.9001866,0 7.9001866,14.64218 39.210766,14.64218 39.210766,0 47.401001,0 47.401001,47.917 0,47.917z"
+                            Margin="0,0,0,10"
+                            ToolTip="{x:Static resources:TooltipResources.Save}"
+                            Command="{Binding SaveCommand}" />
+
+                            <userControls:ModernButton
+                            Grid.Column="2"
+                            ControlHeight="23"
+                            ControlWidth="23"
+                            IconWidth="14"
+                            IconHeight="14"
+                            IconData="M19.85228,12.08996L12.093,19.849201 24.242323,31.997846 12.094,44.145998 19.852051,51.904958 32.001186,39.756277 44.150543,51.904958 51.909,44.145994 39.760246,31.997501 51.909,19.849201 44.15049,12.08996 32.001431,24.238849z M32,0C49.671021,3.1599484E-07 64,14.329407 64,31.998501 64,49.677606 49.671021,63.997003 32,63.997003 14.328003,63.997003 0,49.677606 0,31.998501 0,14.329407 14.328003,3.1599484E-07 32,0z"
+                            Margin="0,0,0,10"
+                            ToolTip="{x:Static resources:TooltipResources.Cancel}"
+                            Command="{Binding CancelCommand}" />
+
+                            <userControls:ModernButton
+                            Grid.Column="4"
+                            ControlHeight="23"
+                            ControlWidth="23"
+                            IconWidth="14"
+                            IconHeight="14"
+                            IconData="M13.338,28.512001L50.661999,28.512001 50.661999,52.741999 13.338,52.741999z M0,6.9750004L9.1771202,6.9750004 9.1771202,13.338428 54.944,13.338428 54.944,6.9750004 64,6.9750004 64,35.609999 54.944,35.609999 54.944,24.107311 9.1771202,24.107311 9.1771202,35.609999 0,35.609999z M13.277,0L50.723,0 50.723,9.4230003 13.277,9.4230003z"
+                            Margin="0,0,0,10"
+                            ToolTip="{x:Static resources:TooltipResources.Print}"
+                            Command="{Binding PrintCommand}" />
+                        </Grid>
+
+                        <Grid
+                        Grid.Row="0"
+                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                        ScrollViewer.VerticalScrollBarVisibility="Auto">
+                            <Grid.Resources>
+                                <userControls:BoolToOppositeBoolConverter x:Key="BoolToOppositeBoolConverter"/>
+                                <DataTemplate DataType="{x:Type utilities:CheckItem}">
+                                    <StackPanel Margin="4" Orientation="Horizontal">
+                                        <CheckBox IsChecked="{Binding IsChecked, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                                        <TextBlock Margin="4,0,0,0" Text="{Binding ItemName}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </Grid.Resources>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="6" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Content="{x:Static  resources:LabelResources.ReceivedDate}" />
+                            <DatePicker
+                            Grid.Column="1"
+                            HorizontalAlignment="Left"
+                            SelectedDate="{Binding Entity.ReceivedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                            Validation.ErrorTemplate="{DynamicResource errorTemplateSilverlightStyle}"
+                            Width="150" />
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="2"
+                            Content="{x:Static  resources:LabelResources.Company}" />
+                            <ComboBox
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Width="120"
+                            HorizontalAlignment="Left"
+                            SelectedValue="{Binding Entity.Company, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            view:VHAttachedProperties.BindEnumToItemSource="VH.Model.Company, VH.Model" />
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            Content="{x:Static  resources:LabelResources.Model_Right}" />
+                            <TextBox
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            Width="300"
+                            HorizontalAlignment="Left"
+                            Text="{Binding Entity.ModelRight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            Content="{x:Static  resources:LabelResources.Model_Left}" />
+                            <TextBox
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            Width="300"
+                            HorizontalAlignment="Left"
+                            Text="{Binding Entity.ModelLeft, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+
+
+                            <GroupBox
+                            Grid.Row="8"
+                            Grid.ColumnSpan="2"
+                            Header="{x:Static  resources:LabelResources.SerialNumber}"
+                            Style="{DynamicResource MetroGroupBox}"
+                                IsEnabled="{Binding Entity.IsSerialNumberRevised, Converter={StaticResource BoolToOppositeBoolConverter}}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="8" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <controls:VHLabel
+                                    AddEndingPunctuation="True"
+                                    Content="{x:Static  resources:LabelResources.Right}" />
+                                    <TextBox
+                                    Grid.Column="1"
+                                    Width="200"
+                                    HorizontalAlignment="Left"
+                                    Text="{Binding Entity.SerialNumberRight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                    ToolTip="{Binding Entity.SerialNumberRight}" />
+
+                                    <controls:VHLabel
+                                    Grid.Column="3"
+                                    AddEndingPunctuation="True"
+                                    Content="{x:Static  resources:LabelResources.left}" />
+                                    <TextBox
+                                    Grid.Column="4"
+                                    Width="200"
+                                    HorizontalAlignment="Left"
+                                    Text="{Binding Entity.SerialNumberLeft, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                    ToolTip="{Binding Entity.SerialNumberLeft}" />
+                                </Grid>
+                            </GroupBox>
+
+                            <GroupBox
+                            Grid.Row="10"
+                            Grid.ColumnSpan="2"
+                            Style="{DynamicResource MetroGroupBox}">
+                                <GroupBox.Header>
+                                    <Grid>
+                                        <CheckBox IsChecked="{Binding Entity.IsSerialNumberRevised}" Content="{x:Static  resources:LabelResources.RevisedSerialNumber}" />
+                                    </Grid>
+                                </GroupBox.Header>
+                                <Grid IsEnabled="{Binding Entity.IsSerialNumberRevised}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="8" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <controls:VHLabel
+                                    AddEndingPunctuation="True"
+                                    Content="{x:Static  resources:LabelResources.Right}" />
+                                    <TextBox
+                                    Grid.Column="1"
+                                    Width="200"
+                                    HorizontalAlignment="Left"
+                                    Text="{Binding Entity.NewSerialNumberRight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                    ToolTip="{Binding Entity.NewSerialNumberRight}" />
+
+                                    <controls:VHLabel
+                                    Grid.Column="3"
+                                    AddEndingPunctuation="True"
+                                    Content="{x:Static  resources:LabelResources.left}" />
+                                    <TextBox
+                                    Grid.Column="4"
+                                    Width="200"
+                                    HorizontalAlignment="Left"
+                                    Text="{Binding Entity.NewSerialNumberLeft, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                    ToolTip="{Binding Entity.NewSerialNumberLeft}" />
+                                </Grid>
+                            </GroupBox>
+
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="12"
+                            Content="{x:Static  resources:LabelResources.HearingAidType}" />
+                            <ComboBox
+                            Grid.Row="12"
+                            Grid.Column="1"
+                            Width="80"
+                            HorizontalAlignment="Left"
+                            SelectedValue="{Binding Entity.HearingAidType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            view:VHAttachedProperties.BindEnumToItemSource="VH.Model.HearingAidType, VH.Model" />
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="14"
+                            Grid.Column="0"
+                            Content="{x:Static  resources:LabelResources.WarrantyType}" />
+                            <ComboBox
+                            Grid.Row="14"
+                            Grid.Column="1"
+                            Width="100"
+                            HorizontalAlignment="Left"
+                            SelectedValue="{Binding Entity.WarrantyType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            view:VHAttachedProperties.BindEnumToItemSource="VH.Model.WarrantyType, VH.Model" />
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="16"
+                            Grid.Column="0"
+                            Content="{x:Static  resources:LabelResources.AccessoriesReceived}" />
+                            <TextBox
+                            Grid.Row="16"
+                            Grid.Column="1"
+                            Width="250"
+                            HorizontalAlignment="Left"
+                            Text="{Binding Entity.AccessoriesReceived, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="18"
+                            Grid.Column="0"
+                            Content="{x:Static  resources:LabelResources.SpareAidGiven}" />
+                            <ComboBox
+                            Grid.Row="18"
+                            Grid.Column="1"
+                            Width="80"
+                            HorizontalAlignment="Left"
+                            SelectedValue="{Binding Entity.SpareAidGiven, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            view:VHAttachedProperties.BindEnumToItemSource="VH.Model.YesNo, VH.Model" />
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="20"
+                            Grid.Column="0"
+                            Visibility="{Binding IsSpareAidGiven, Converter={userControls:BoolToVisibilityValueConverter}}"
+                            Content="{x:Static  resources:LabelResources.SpareAidGivenDetails}" />
+                            <TextBox
+                            Grid.Row="20"
+                            Grid.Column="1"
+                            Width="200"
+                            AcceptsReturn="True"
+                            HorizontalAlignment="Left"
+                            Visibility="{Binding IsSpareAidGiven, Converter={userControls:BoolToVisibilityValueConverter}}"
+                            Text="{Binding Entity.SpareAidGivenDetails, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="22"
+                            Grid.Column="0"
+                            Content="{x:Static  resources:LabelResources.Amount}" />
+                            <TextBox
+                            Grid.Row="22"
+                            Grid.Column="1"
+                            Width="150"
+                            HorizontalAlignment="Left"
+                            userControls:TextBoxMaskBehavior.Mask="Decimal"
+                            Text="{Binding Entity.Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="24"
+                            Grid.Column="0"
+                            Content="{x:Static  resources:LabelResources.AdvanceAmount}" />
+                            <TextBox
+                            Grid.Row="24"
+                            Grid.Column="1"
+                            Width="150"
+                            HorizontalAlignment="Left"
+                            userControls:TextBoxMaskBehavior.Mask="Decimal"
+                            Text="{Binding Entity.AdvanceAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="26"
+                            Grid.Column="0"
+                            Content="{x:Static  resources:LabelResources.BalanceAmount}" />
+                            <TextBlock
+                            Grid.Row="26"
+                            Grid.Column="1"
+                            Width="150"
+                            HorizontalAlignment="Left"
+                            Text="{Binding Entity.BalanceAmount, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="28"
+                            Grid.Column="0"
+                            Content="{x:Static  resources:LabelResources.CustomerApprovalOnEstimateAmt}" />
+                            <ComboBox
+                            Grid.Row="28"
+                            Grid.Column="1"
+                            Width="80"
+                            HorizontalAlignment="Left"
+                            SelectedValue="{Binding Entity.CustomerApprovalOnEstimateAmt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            view:VHAttachedProperties.BindEnumToItemSource="VH.Model.YesNo, VH.Model" />
+
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="30"
+                            Content="{x:Static  resources:LabelResources.Molds}" />
+                            <ComboBox
+                            Grid.Row="30"
+                            Grid.Column="1"
+                            Width="160"
+                            HorizontalAlignment="Left"
+                            SelectedValue="{Binding Entity.MoldRepair, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            view:VHAttachedProperties.BindEnumToItemSource="VH.Model.MoldRepair, VH.Model" />
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="32"
+                            Content="{x:Static  resources:LabelResources.HearingAidCondition}" />
+                            <!--<ComboBox
+                            Grid.Row="30"
+                            Grid.Column="1"
+                            Width="160"
+                            HorizontalAlignment="Left"
+                            SelectedValue="{Binding Entity.HearingAidCondition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            view:VHAttachedProperties.BindEnumToItemSource="VH.Model.HearingAidCondition, VH.Model" />-->
+                            <ComboBox
+                            Grid.Row="32"
+                            Grid.Column="1"
+                            Width="160"
+                            HorizontalAlignment="Left"
+                            ItemsSource="{Binding CheckItemCollection}">
+                                <ComboBox.Template>
+                                    <ControlTemplate TargetType="ComboBox">
+                                        <Grid>
+                                            <ToggleButton
+                                            x:Name="ToggleButton"
+                                            Grid.Column="2"
+                                            IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                                            Focusable="false"
+                                            ClickMode="Press" HorizontalContentAlignment="Left">
+                                                <ToggleButton.Template>
+                                                    <ControlTemplate>
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="*" />
+                                                                <ColumnDefinition Width="18" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <Border
+                                                            x:Name="Border"
+                                                            Grid.ColumnSpan="2"
+                                                            CornerRadius="2"
+                                                            Background="White"
+                                                            BorderBrush="Black"
+                                                            BorderThickness="1,1,1,1" />
+                                                            <Border
+                                                            x:Name="BorderComp"
+                                                            Grid.Column="0"
+                                                            CornerRadius="2"
+                                                            Margin="1"
+                                                            Background="White"
+                                                            BorderBrush="Black"
+                                                            BorderThickness="0,0,0,0">
+                                                                <TextBlock
+                                                                Text="{Binding Path=DataContext.SelectedHearingAidConditionTypes, ElementName=page}"
+                                                                Background="White" Padding="3" />
+                                                            </Border>
+                                                            <Path
+                                                            x:Name="Arrow"
+                                                            Grid.Column="1"
+                                                            Fill="Black"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"
+                                                            Data="M 0 0 L 4 4 L 8 0 Z" />
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </ToggleButton.Template>
+                                            </ToggleButton>
+                                            <Popup
+                                            Name="Popup"
+                                            Placement="Bottom"
+                                            AllowsTransparency="True"
+                                            Focusable="False" IsOpen="{TemplateBinding IsDropDownOpen}"
+                                            PopupAnimation="Slide">
+                                                <Grid
+                                                Name="DropDown"
+                                                SnapsToDevicePixels="True"
+                                                MinWidth="{TemplateBinding ActualWidth}"
+                                                MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                                    <Border
+                                                    x:Name="DropDownBorder"
+                                                    BorderThickness="1" Background="White"
+                                                    BorderBrush="Black" />
+                                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True"
+                                                              DataContext="{Binding}">
+                                                        <StackPanel IsItemsHost="True"
+                                                                KeyboardNavigation.DirectionalNavigation="Contained" />
+                                                    </ScrollViewer>
+                                                </Grid>
+                                            </Popup>
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="HasItems" Value="false">
+                                                <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95" />
+                                            </Trigger>
+                                            <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
+                                                <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="4" />
+                                                <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </ComboBox.Template>
+                            </ComboBox>
+
+                            <controls:VHLabel
+                            Grid.Row="34"
+                            Grid.Column="0"
+                            AddEndingPunctuation="True"
+                            Content="{x:Static  resources:LabelResources.DueDate}" />
+                            <TextBox
+                            Grid.Row="34"
+                            Grid.Column="1"
+                            Width="150"
+                            HorizontalAlignment="Left"
+                            Text="{Binding Entity.DueDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+
+                            <controls:VHLabel
+                            AddEndingPunctuation="True"
+                            Grid.Row="36"
+                            Grid.Column="0"
+                            Content="{x:Static  resources:LabelResources.RepairAmtLessThan}" />
+                            <TextBox
+                            Grid.Row="36"
+                            Grid.Column="1"
+                            Width="150"
+                            HorizontalAlignment="Left"
+                            userControls:TextBoxMaskBehavior.Mask="Decimal"
+                            Text="{Binding Entity.RepairAmtLessThan, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+
+                            <controls:VHLabel
+                            Grid.Row="38"
+                            Content="{x:Static  resources:LabelResources.ComplaintDesc}" />
+                            <TextBox
+                            Grid.Row="38"
+                            Grid.Column="1"
+                            Text="{Binding Entity.ComplaintDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                            HorizontalAlignment="Left"
+                            Width="300"
+                            TextWrapping="WrapWithOverflow"
+                            AcceptsReturn="True" VerticalContentAlignment="Top" Height="40" />
+                        </Grid>
+
+
+                    </Grid>
+                </ScrollViewer>
+
+                <Grid
+                    Margin="0,8,0,0"
+                        HorizontalAlignment="Center"
+                        Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                            Content="{x:Static  resources:ButtonResources.Save}"
+                            Command="{Binding SaveCommand}" />
+                    <Button
+                            Content="{x:Static  resources:ButtonResources.Cancel}"
+                            Grid.Column="2"
+                            Command="{Binding CancelCommand}" />
+                </Grid>
+            </Grid>
+            
+        </AdornerDecorator>
+    </Grid>
+</UserControl>

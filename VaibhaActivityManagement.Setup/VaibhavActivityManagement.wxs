@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="51D1E70D-2FCE-4E7C-9EA5-9A545DB439D3" Name="VaibhavActivityManagement" Language="1033" Version="1.0.0.0"
+           Manufacturer="Global Tech Solutions - Amarnath Kashyap" UpgradeCode="8CBD22E3-1566-4A78-A8C0-8E650826429B">
+    <Package Keywords="Installer" Description="Vaibhav Activity Management" Comments="Registered to Global Tech"
+             Manufacturer="Global Tech Solutions - Amarnath Kashyap" InstallerVersion="200" Languages="1033"
+             Compressed="yes"
+             InstallScope="perMachine" SummaryCodepage='1252' />
+
+    <Media Id="1" Cabinet="VaibhavActivityManagement.cab" EmbedCab="yes" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <!--<MediaTemplate />-->
+
+    <Feature Id="ProductFeature" Title="Vaibhav Activity Management" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Vaibhav Activity Management" />
+      </Directory>
+
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="Vaibhav Activity Management" />
+      </Directory>
+    </Directory>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="MainExecutable" Guid="8CC0D557-7DB2-4802-AB1D-14A822C53FB6">
+        <File Id='VaibhavActivityManagementEXE' Name='VaibhavActivityManagement.exe' DiskId='1'
+              Source='$(var.VH.View.TargetPath)' KeyPath='yes' Checksum='yes' />
+      </Component>
+      <Component Id="AppConfig" Guid="724851E6-D13E-4850-8244-A40784D1A383">
+        <File Id='ApplicationConfig' Name='VaibhavActivityManagement.exe.config' DiskId='1'
+              Source='$(var.VH.View.TargetDir)\VH.View.exe.config' KeyPath='yes' Checksum='yes' />
+      </Component>
+      <Component Id="NLogConfig" Guid="C1D8CA53-267B-4062-A9EE-06DD8944E76B">
+        <File Id='LogConfig' Name='NLog.config' DiskId='1'
+              Source='$(var.VH.View.TargetDir)\NLog.config' KeyPath='yes' Checksum='yes' />
+      </Component>
+      <Component Id="EntityFramework" Guid="49FD90F4-6B1A-4445-B176-7CB583B75446">
+        <File Id='EntityFrameworkDLL' Name='EntityFramework.dll'
+              Source='$(var.VH.View.TargetDir)\EntityFramework.dll' DiskId="1" KeyPath='yes' />
+      </Component>
+      <Component Id="GalaSoft.MvvmLight.Extras.WPF4" Guid="E660D5DC-D38C-4812-9537-04F88CBB163E">
+        <File Id='GalaSoft.MvvmLight.Extras.WPF4DLL' Name='GalaSoft.MvvmLight.Extras.WPF4.dll'
+              Source='$(var.VH.View.TargetDir)\GalaSoft.MvvmLight.Extras.WPF4.dll' DiskId="1"
+              KeyPath='yes' />
+      </Component>
+      <Component Id="GalaSoft.MvvmLight.WPF4" Guid="291ADA75-56AF-41b0-AAB9-0FA84822DE9D">
+        <File Id='GalaSoft.MvvmLight.WPF4DLL' Name='GalaSoft.MvvmLight.WPF4.dll'
+              Source='$(var.VH.View.TargetDir)\GalaSoft.MvvmLight.WPF4.dll' DiskId="1"
+              KeyPath='yes' />
+      </Component>
+      <Component Id="System.Windows.Interactivity" Guid="0C7B2EDE-8BBA-4f40-A77B-0CB973ED61C7">
+        <File Id='System.Windows.InteractivityDLL' Name='System.Windows.Interactivity.dll'
+              Source='$(var.VH.View.TargetDir)\System.Windows.Interactivity.dll' DiskId="1"
+              KeyPath='yes' />
+      </Component>
+      <Component Id="NLog" Guid="1CC04D2D-409F-490C-AC1B-D895F6FF80DE">
+        <File Id='NLogDLL' Name='NLog.dll'
+              Source='$(var.VH.View.TargetDir)\NLog.dll' DiskId="1"
+              KeyPath='yes' />
+      </Component>
+      <Component Id="VH.Bases" Guid="E0197B5D-BC80-495F-882F-22520EBE2AEB">
+        <File Id='VH.BasesDLL' Name='VH.Bases.dll'
+              Source='$(var.VH.View.TargetDir)\VH.Bases.dll' DiskId="1"
+              KeyPath='yes' />
+      </Component>
+      <Component Id="VH.DataAccess" Guid="F2D5013C-FA54-4C34-9126-AFAEF88FBA87">
+        <File Id='VH.DataAccessDLL' Name='VH.DataAccess.dll'
+              Source='$(var.VH.View.TargetDir)\VH.DataAccess.dll' DiskId="1"
+              KeyPath='yes' />
+      </Component>
+      <Component Id="VH.ErrorLog" Guid="BD749779-5289-47A7-BF1E-30087B297C78">
+        <File Id='VH.ErrorLogDLL' Name='VH.ErrorLog.dll'
+              Source='$(var.VH.View.TargetDir)\VH.ErrorLog.dll' DiskId="1"
+              KeyPath='yes' />
+      </Component>
+      <Component Id="VH.Model" Guid="A8F0BB7B-7D20-4859-9783-D70F2D1E4096">
+        <File Id='VH.ModelDLL' Name='VH.Model.dll'
+              Source='$(var.VH.View.TargetDir)\VH.Model.dll' DiskId="1"
+              KeyPath='yes' />
+      </Component>
+      <Component Id="VH.Resources" Guid="A64D07FE-6BDF-4F20-B065-44520909217E">
+        <File Id='VH.ResourcesDLL' Name='VH.Resources.dll'
+              Source='$(var.VH.View.TargetDir)\VH.Resources.dll' DiskId="1"
+              KeyPath='yes' />
+      </Component>
+      <Component Id="VH.UI.UserControls" Guid="97536705-A524-4EB6-9A83-2F4ACE7D8C38">
+        <File Id='VH.UI.UserControlsDLL' Name='VH.UI.UserControls.dll'
+              Source='$(var.VH.View.TargetDir)\VH.UI.UserControls.dll' DiskId="1"
+              KeyPath='yes' />
+      </Component>
+      <Component Id="VH.ViewModel" Guid="9D77B743-06F5-4A2C-814B-4EABB55ADF6C">
+        <File Id='VH.ViewModelDLL' Name='VH.ViewModel.dll'
+              Source='$(var.VH.View.TargetDir)\VH.ViewModel.dll' DiskId="1"
+              KeyPath='yes' />
+      </Component>
+     <Component Id="Widget" Guid="26EC4366-BD1A-4EA2-891A-AABCC1577F7E">
+        <File Id='WidgetDLL' Name='Widget.dll'
+              Source='$(var.VH.View.TargetDir)\Widget.dll' DiskId="1"
+              KeyPath='yes' />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="49B61093-AEBE-4340-99B0-558B7E37479E">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="Vaibhav Activity Management"
+                  Description="Vaibhav Activity Management"
+                  Target="INSTALLFOLDERVaibhavActivityManagement.exe"
+                  WorkingDirectory="INSTALLFOLDER" />
+        <!-- Step 1: Add the uninstall shortcut to your installer package -->
+        <Shortcut Id="UninstallProduct"
+                  Name="Uninstall"
+                  Description="Uninstall Vaibhav Activity Management"
+                  Target="System64Foldermsiexec.exe"
+                  Arguments="/x ProductCode" />
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\VaibhavActivityManagement" Name="installed" Type="integer"
+                       Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <ComponentRef Id="MainExecutable" />
+      <ComponentRef Id="EntityFramework" />
+      <ComponentRef Id="GalaSoft.MvvmLight.WPF4" />
+      <ComponentRef Id="System.Windows.Interactivity" />
+      <ComponentRef Id="GalaSoft.MvvmLight.Extras.WPF4" />
+      <ComponentRef Id="GalaSoft.MvvmLight.WPF4" />
+      <ComponentRef Id="NLog" />
+      <ComponentRef Id="ApplicationShortcut" />
+      <ComponentRef Id="VH.Bases" />
+      <ComponentRef Id="VH.DataAccess" />
+      <ComponentRef Id="VH.ErrorLog" />
+      <ComponentRef Id="VH.Model" />
+      <ComponentRef Id="VH.Resources" />
+      <ComponentRef Id="VH.UI.UserControls" />
+      <ComponentRef Id="VH.ViewModel" />
+      <ComponentRef Id="Widget" />
+     <ComponentRef Id="AppConfig" />
+     <ComponentRef Id="NLogConfig" />
+    </ComponentGroup>
+
+    <Property Id="WIXUI_EXITDIALOGOPTIONALTEXT" Value="Thank you for installing Vaibhav Activity Management product." />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER"></Property>
+    <UIRef Id="WixUI_InstallDir" />
+  
+  <Icon Id="icon.ico" SourceFile="$(var.VH.View.TargetDir)\Images\Ear.ico"/>
+<Property Id="ARPPRODUCTICON" Value="icon.ico" />
+  </Product>
+</Wix>

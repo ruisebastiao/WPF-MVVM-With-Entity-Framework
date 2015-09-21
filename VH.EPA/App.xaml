@@ -1,0 +1,28 @@
+﻿<Application x:Class="VH.View.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Views\MainWindow.xaml"
+             Startup="ApplicationStartup"
+             DispatcherUnhandledException="ApplicationDispatcherUnhandledException">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+              <ResourceDictionary Source="Theme\Metro\Brushes.xaml" />
+                <ResourceDictionary Source="Theme\Metro\Fonts.xaml" />
+                <ResourceDictionary Source="Theme\Metro\VectorIconStyles.xaml" />
+                <ResourceDictionary Source="Theme\Metro\CoreStyles.xaml" />
+                <ResourceDictionary Source="Theme\Images.xaml" />
+                
+                <ResourceDictionary Source="Theme\Metro\ControlStyles.xaml" />
+              <ResourceDictionary Source="Theme\Metro\WindowStyles.xaml" />
+              
+                <ResourceDictionary Source="Theme\StyleandTemplates.xaml" />
+                
+              <ResourceDictionary Source="MakeSkins\MakeSkins.xaml" />
+                <ResourceDictionary Source="Theme\Controls\MetroContentControl.xaml" />
+                
+                <!--<ResourceDictionary Source="pack://application:,,,/VH.UI.UserControls;component/Skin/StyleandTemplates.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

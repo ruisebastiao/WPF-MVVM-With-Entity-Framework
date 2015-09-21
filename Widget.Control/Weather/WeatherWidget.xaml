@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Widget.Weather.WeatherWidget"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:Properties="clr-namespace:Widget.Weather.WeatherResources" FontWeight="Light" Background="#327f84">
+    <!--<UserControl.ContextMenu>
+        <ContextMenu>
+            <MenuItem Name="RefreshItem" Header="{x:Static Properties:Resources.RefreshItem}" Click="RefreshItemClick"/>
+            <MenuItem Name="OptionsItem" Header="{x:Static Properties:Resources.OptionsItem}" Click="OptionsItemClick"/>
+        </ContextMenu>
+    </UserControl.ContextMenu>-->
+    <UserControl.Resources>
+        <Storyboard x:Key="TileAnim">
+            <DoubleAnimation Storyboard.TargetName="ForegroundGridTranslation" Storyboard.TargetProperty="Y" From="0" To="-50" Duration="0:0:0.3" AccelerationRatio="0.3" DecelerationRatio="0.7"/>
+            <DoubleAnimation Storyboard.TargetName="ForegroundGridTranslation" Storyboard.TargetProperty="Y" BeginTime="0:0:2.5" To="0" Duration="0:0:0.3" AccelerationRatio="0.3" DecelerationRatio="0.7"/>
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid ClipToBounds="True">
+        <TextBlock Name="Location" Text="New York" Foreground="White" FontSize="28" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,10,10" TextTrimming="CharacterEllipsis"/>
+        <Grid Name="ForegroundGrid">
+            <Grid.RenderTransform>
+                <TranslateTransform x:Name="ForegroundGridTranslation"/>
+            </Grid.RenderTransform>
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,0">
+                    <GradientStop Color="#52b4bd" Offset="0"/>
+                    <GradientStop Color="#409fa5" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <DockPanel Name="WeatherPanel">
+                <Image Name="WeatherIcon" DockPanel.Dock="Left" Source="/Widget;component/Weather/WeatherResources/weather_1.png" Width="120"/>
+                <StackPanel Margin="0,20,10,20">
+                    <TextBlock Name="Temperture" Text="0° Sunny" FontSize="30" Foreground="White" TextTrimming="CharacterEllipsis"/>
+                    <TextBlock Name="FirstDay" Text="Wednesday: 0° Sunny" FontSize="18" Foreground="White" TextTrimming="CharacterEllipsis"/>
+                    <TextBlock Name="SecondDay" Text="Thursday: 0° Sunny" FontSize="18" Foreground="White" TextTrimming="CharacterEllipsis"/>
+                    <TextBlock Name="ThirdDay" Text="Friday: 0° Sunny" FontSize="18" Foreground="White" TextTrimming="CharacterEllipsis"/>
+                </StackPanel>
+            </DockPanel>
+            <TextBlock Text="Weather" Foreground="White" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10" FontWeight="Normal"/>
+        </Grid>
+        <TextBlock Name="Tip" Text="{x:Static Properties:Resources.Tip}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Foreground="White" Margin="10" FontSize="16" TextWrapping="Wrap" Visibility="Collapsed" FontWeight="Normal"/>
+    </Grid>
+</UserControl>

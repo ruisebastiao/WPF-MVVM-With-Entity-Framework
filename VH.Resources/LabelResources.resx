@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Address" xml:space="preserve">
+    <value>ADDRESS : </value>
+  </data>
+  <data name="ADDRESSs" xml:space="preserve">
+    <value>ADDRESS(s)</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>CITY : </value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>COUNTRY : </value>
+  </data>
+  <data name="DataSaved" xml:space="preserve">
+    <value>DATA SAVED</value>
+  </data>
+  <data name="DOB" xml:space="preserve">
+    <value>DOB : </value>
+  </data>
+  <data name="EMail" xml:space="preserve">
+    <value>EMAIL :</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>FIRSTNAME : </value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>GENDER : </value>
+  </data>
+  <data name="IsPrimary" xml:space="preserve">
+    <value>ISPRIMARY : </value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>LASTNAME : </value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>PASSWORD</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>PHONE NO. : </value>
+  </data>
+  <data name="PhoneType" xml:space="preserve">
+    <value>PHONE TYPE : </value>
+  </data>
+  <data name="SearchCustomer" xml:space="preserve">
+    <value>SEARCH CUSTOMER</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>STATE : </value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>USERNAME</value>
+  </data>
+  <data name="ZipCode" xml:space="preserve">
+    <value>ZIPCODE : </value>
+  </data>
+  <data name="CreateNewAccount" xml:space="preserve">
+    <value>create new account</value>
+  </data>
+  <data name="ForgetPassword" xml:space="preserve">
+    <value>forgot your password</value>
+  </data>
+  <data name="GridAddress" xml:space="preserve">
+    <value>ADDRESS</value>
+  </data>
+  <data name="GridDOB" xml:space="preserve">
+    <value>DATE OF BIRTH</value>
+  </data>
+  <data name="GridEmail" xml:space="preserve">
+    <value>EMAIL</value>
+  </data>
+  <data name="GridFormattedName" xml:space="preserve">
+    <value>NAME</value>
+  </data>
+  <data name="GridGender" xml:space="preserve">
+    <value>GENDER</value>
+  </data>
+  <data name="GridPhoneNumber" xml:space="preserve">
+    <value>NUMBER</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="RememberPassword" xml:space="preserve">
+    <value>Remember my password</value>
+  </data>
+  <data name="SignMe" xml:space="preserve">
+    <value>Sign me in automatically</value>
+  </data>
+  <data name="AppointmentBeginTime" xml:space="preserve">
+    <value>BEGIN TIME</value>
+  </data>
+  <data name="AppointmentEndTime" xml:space="preserve">
+    <value>END TIME</value>
+  </data>
+  <data name="AppointmentType" xml:space="preserve">
+    <value>TYPE</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>DATE</value>
+  </data>
+  <data name="ExistingCustomer" xml:space="preserve">
+    <value>EXISTING CUSTOMER</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>NAME</value>
+  </data>
+  <data name="AppointmentTime" xml:space="preserve">
+    <value>APPOINTMENTTIME</value>
+  </data>
+  <data name="AddNewCustomer" xml:space="preserve">
+    <value>ADD NEW CUSTOMER</value>
+  </data>
+  <data name="EditAppointment" xml:space="preserve">
+    <value>EDIT APPOINTMENT</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>ERROR</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>INFORMATION</value>
+  </data>
+  <data name="VHERP" xml:space="preserve">
+    <value>VH ERP</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>WARNING</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>ADD</value>
+  </data>
+  <data name="Appointment" xml:space="preserve">
+    <value>APPOINTMENT</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>DELETE</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>REFRESH</value>
+  </data>
+  <data name="CallDate" xml:space="preserve">
+    <value>CALL DATE</value>
+  </data>
+  <data name="CallerName" xml:space="preserve">
+    <value>CALLER NAME</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>COMMENT</value>
+  </data>
+  <data name="AccessoriesReceived" xml:space="preserve">
+    <value>ACCESSORIES RECEIVED</value>
+  </data>
+  <data name="AdvanceAmount" xml:space="preserve">
+    <value>ADV AMT RECEIVED</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>COMPANY</value>
+  </data>
+  <data name="ComplaintDescription" xml:space="preserve">
+    <value>COMPLAINT DESC</value>
+  </data>
+  <data name="HearingAidType" xml:space="preserve">
+    <value>HEARING AID TYPE</value>
+  </data>
+  <data name="left" xml:space="preserve">
+    <value>LEFT</value>
+  </data>
+  <data name="Model" xml:space="preserve">
+    <value>MODEL</value>
+  </data>
+  <data name="ReceivedDate" xml:space="preserve">
+    <value>RECEIVED DATE</value>
+  </data>
+  <data name="RepairID" xml:space="preserve">
+    <value>REPAIR ID</value>
+  </data>
+  <data name="Right" xml:space="preserve">
+    <value>RIGHT</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>SERIAL NUMBER</value>
+  </data>
+  <data name="SpareAidGiven" xml:space="preserve">
+    <value>SPARE AID GIVEN</value>
+  </data>
+  <data name="WarrantyType" xml:space="preserve">
+    <value>WARRANTY TYPE</value>
+  </data>
+  <data name="ComplaintDesc" xml:space="preserve">
+    <value>COMPLAINT DESCRIPTION</value>
+  </data>
+  <data name="DueDate" xml:space="preserve">
+    <value>DUE DATE</value>
+  </data>
+  <data name="RepairAmtLessThan" xml:space="preserve">
+    <value>REPAIR AMT LESS THAN</value>
+  </data>
+  <data name="SerialNumberLeft" xml:space="preserve">
+    <value>SERIAL NO. LEFT</value>
+  </data>
+  <data name="SerialNumberRight" xml:space="preserve">
+    <value>SERIAL NO. RIGHT</value>
+  </data>
+  <data name="AdditionalComment" xml:space="preserve">
+    <value>ADDITIONAL COMMENT</value>
+  </data>
+  <data name="CompanyDispatcedDate" xml:space="preserve">
+    <value>COMPANY DISPATCHED</value>
+  </data>
+  <data name="CompanyReceivedDate" xml:space="preserve">
+    <value>COMPANY RECEIVED</value>
+  </data>
+  <data name="DeliveredToCustomerDate" xml:space="preserve">
+    <value>DELIVERED TO CUSTOMER</value>
+  </data>
+  <data name="DispatchedToCompanyDate" xml:space="preserve">
+    <value>DISPATCHED TO COMPANY</value>
+  </data>
+  <data name="RepairStatus" xml:space="preserve">
+    <value>REPAIR STATUS</value>
+  </data>
+  <data name="UpdateRepairStatus" xml:space="preserve">
+    <value>UPDATE STATUS</value>
+  </data>
+  <data name="VHReceivedDate" xml:space="preserve">
+    <value>RECEIVED DATE</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="HearingAidCondition" xml:space="preserve">
+    <value>HEARING AID CONDITION</value>
+  </data>
+  <data name="Molds" xml:space="preserve">
+    <value>MOLDS</value>
+  </data>
+  <data name="AidType" xml:space="preserve">
+    <value>AID TYPE</value>
+  </data>
+  <data name="EarMold" xml:space="preserve">
+    <value>EAR MOLD</value>
+  </data>
+  <data name="EarMoldDesign" xml:space="preserve">
+    <value>MOLD DESIGN</value>
+  </data>
+  <data name="EarMoldType" xml:space="preserve">
+    <value>MOLD TYPE</value>
+  </data>
+  <data name="EarSide" xml:space="preserve">
+    <value>SIDE</value>
+  </data>
+  <data name="HearingAid" xml:space="preserve">
+    <value>HEARING AID</value>
+  </data>
+  <data name="HearingAidId" xml:space="preserve">
+    <value>AID ID</value>
+  </data>
+  <data name="OrderDate" xml:space="preserve">
+    <value>ORDER DATE</value>
+  </data>
+  <data name="OrderID" xml:space="preserve">
+    <value>ORDER ID</value>
+  </data>
+  <data name="OrderStatus" xml:space="preserve">
+    <value>STATUS</value>
+  </data>
+  <data name="SoftMoldTubingType" xml:space="preserve">
+    <value>TUBING TYPE</value>
+  </data>
+  <data name="VentLength" xml:space="preserve">
+    <value>VENT LENGTH</value>
+  </data>
+  <data name="VentSize" xml:space="preserve">
+    <value>VENT SIZE</value>
+  </data>
+  <data name="VentType" xml:space="preserve">
+    <value>VENT TYPE</value>
+  </data>
+  <data name="OrderEarMold" xml:space="preserve">
+    <value>ORDERS - EAR MOLD</value>
+  </data>
+  <data name="OrderHeardingAid" xml:space="preserve">
+    <value>ORDERS - HEARING AID</value>
+  </data>
+  <data name="RepairList" xml:space="preserve">
+    <value>REPAIR LIST</value>
+  </data>
+  <data name="BatterySize" xml:space="preserve">
+    <value>BATTERY SIZE</value>
+  </data>
+  <data name="IsAdmin" xml:space="preserve">
+    <value>IS ADMIN</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>CONFIRM PASSWORD</value>
+  </data>
+  <data name="LoginName" xml:space="preserve">
+    <value>LOGIN NAME</value>
+  </data>
+  <data name="LoginPassword" xml:space="preserve">
+    <value>LOGIN PASSWORD</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>NEW PASSWORD</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>OLD PASSWORD </value>
+  </data>
+  <data name="CallTime" xml:space="preserve">
+    <value>CALL TIME</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>TIME</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>MESSAGE</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>TYPE</value>
+  </data>
+  <data name="Reminders" xml:space="preserve">
+    <value>REMINDERS</value>
+  </data>
+  <data name="AddressDetails" xml:space="preserve">
+    <value>ADDRESS DETAILS</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>NO.</value>
+  </data>
+  <data name="PhoneDetails" xml:space="preserve">
+    <value>PHONE DETAILS</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>AMOUNT</value>
+  </data>
+  <data name="BalanceAmount" xml:space="preserve">
+    <value>BALANCE AMT</value>
+  </data>
+  <data name="DeliveredDate" xml:space="preserve">
+    <value>DELIVERED DATE</value>
+  </data>
+  <data name="InformedDate" xml:space="preserve">
+    <value>INFORMED DATE</value>
+  </data>
+  <data name="Model_Left" xml:space="preserve">
+    <value>MODEL LEFT</value>
+  </data>
+  <data name="Model_Right" xml:space="preserve">
+    <value>MODEL RIGHT</value>
+  </data>
+  <data name="SerialNumberL" xml:space="preserve">
+    <value>SL No. LEFT</value>
+  </data>
+  <data name="SerialNumberR" xml:space="preserve">
+    <value>SL No. RIGHT</value>
+  </data>
+  <data name="WarrantyCardGiven" xml:space="preserve">
+    <value>WARRANTY CARD WITH</value>
+  </data>
+  <data name="CustomerApprovalOnEstimateAmt" xml:space="preserve">
+    <value>APPR ON ESTIMATE AMT</value>
+  </data>
+  <data name="SpareAidGivenDetails" xml:space="preserve">
+    <value>SPARE AID DETAILS</value>
+  </data>
+  <data name="Relationship" xml:space="preserve">
+    <value>R,SHIP</value>
+  </data>
+  <data name="RevisedSerialNumber" xml:space="preserve">
+    <value>REVISED SL NO.,</value>
+  </data>
+  <data name="SpareAidReceived" xml:space="preserve">
+    <value>SPARE AID RECEIVED</value>
+  </data>
+</root>
